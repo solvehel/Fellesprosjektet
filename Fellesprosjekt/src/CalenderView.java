@@ -6,6 +6,7 @@ import java.awt.GridBagLayout;
 import java.util.ArrayList;
 
 import javax.swing.BorderFactory;
+import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -27,6 +28,7 @@ public class CalenderView extends JFrame {
 	
 	protected static JPanel panel;
 	protected static JPanel cp;
+	protected static DefaultListModel messagesModel;
 	protected static JLabel messagesText;
 	protected static JList messages;
 	protected static JScrollPane messagesScrollPane;
@@ -56,7 +58,8 @@ public class CalenderView extends JFrame {
 		panel = new JPanel();
 		cp = new CalendarProgram(this);
 		messagesText = new JLabel("Messages:");
-		messages = new JList();
+		messagesModel = new DefaultListModel();
+		messages = new JList(messagesModel);
 		messagesScrollPane = new JScrollPane(messages);
 		tableModel = new DefaultTableModel();
 		weekTable = new JTable(tableModel);
@@ -189,7 +192,7 @@ public class CalenderView extends JFrame {
 	}
 	
 	public void addNotification(Notification notis) {
-		
+		messagesModel.addElement(notis);
 	}
 	
 }

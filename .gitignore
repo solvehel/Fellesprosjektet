@@ -1,3 +1,10 @@
-*.git
+*bin/
+*.class
+*.DS_Store
+*.idea/
 *.metadata
-
+*.project
+*.classpath
+*.settings
+*.iml
+project/Log/*

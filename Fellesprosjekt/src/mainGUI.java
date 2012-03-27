@@ -31,7 +31,7 @@ public class mainGUI implements UpdateListener {
 
 	@Override
 	public void notificationReceived(Notification notification) {
-		
+		cv.addNotification(notification);
 		
 	}
 
